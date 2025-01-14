@@ -151,6 +151,10 @@ def get_gmus():
             'message': str(e)
         }), 500
 
+@app.route('/api/health')
+def health_check():
+    return jsonify({"status": "healthy"}), 200
+
 @app.route('/')
 def index():
     return jsonify({"message": "DankNet API is running"})
