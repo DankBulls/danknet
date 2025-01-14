@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 </style>
 
-# 🦌 DankNet: Your AI-Powered Hunting Companion
+# 🦌 DankNet: DankBulls Official Comms App
 
 DankNet is a cutting-edge hunting communication platform that helps hunters make better decisions using artificial intelligence and LoRa. Whether you're planning your next hunt or analyzing your favorite spots, DankNet provides smart insights to improve your success rate.
 
@@ -16,7 +16,7 @@ DankNet is a cutting-edge hunting communication platform that helps hunters make
 - **Best Times**: Know exactly when to hunt with hourly activity predictions
 - **Weather Impact**: Understand how weather affects your hunt
 **See other hunters**: See other hunters in your party using LoRa
-**Message other hunters**: Message other hunters in your party using LoRa
+**Message other Dank Bull hunters**: Message other hunters in your party using LoRa
 
 ### AI-Powered Insights
 - **Animal Behavior**: Learn how animals move and behave in your hunting area

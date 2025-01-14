@@ -1,17 +1,42 @@
-from flask import request, jsonify
+from flask import Flask, jsonify, request, session
+from flask_cors import CORS
+import os
+from dotenv import load_dotenv
+from flask_socketio import SocketIO
+import logging
 from flask_login import UserMixin, login_required, current_user, LoginManager
 from datetime import datetime
 from pathlib import Path
-from flask_socketio import SocketIO
 import ai_predictor
 from . import db, create_app, login_manager
 
-app = create_app()
-login_manager.init_app(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+# Load environment variables
+load_dotenv()
 
-# Initialize services
-predictor = ai_predictor.GamePredictor()
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+app = create_app()
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'your-secret-key-here')
+login_manager.init_app(app)
+
+# Configure CORS
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://yourusername.pythonanywhere.com",  # Update this with your PythonAnywhere domain
+            "http://localhost:3000"  # Keep this for local development
+        ],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
+
+socketio = SocketIO(app, cors_allowed_origins=[
+    "https://yourusername.pythonanywhere.com",  # Update this with your PythonAnywhere domain
+    "http://localhost:3000"
+])
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,12 +47,16 @@ class User(UserMixin, db.Model):
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    try:
+        return User.query.get(int(user_id))
+    except Exception as e:
+        logger.error(f"Error loading user {user_id}: {str(e)}")
+        return None
 
 class Hunt(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    gmu_id = db.Column(db.String(20), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False, index=True)
+    gmu_id = db.Column(db.String(20), nullable=False, index=True)
     date = db.Column(db.DateTime, nullable=False)
     success = db.Column(db.Boolean, default=False)
     animal_type = db.Column(db.String(50))
@@ -56,7 +85,7 @@ def get_predictions():
         }
         
         # Get predictions
-        predictions = predictor.get_hotspots(bounds)
+        predictions = ai_predictor.GamePredictor().get_hotspots(bounds)
         
         return jsonify({
             'status': 'success',
@@ -64,6 +93,7 @@ def get_predictions():
         })
         
     except Exception as e:
+        logger.error(f"Error in get_predictions: {str(e)}")
         return jsonify({
             'status': 'error',
             'message': str(e)
@@ -96,6 +126,7 @@ def record_hunt():
         
     except Exception as e:
         db.session.rollback()
+        logger.error(f"Error in record_hunt: {str(e)}")
         return jsonify({
             'status': 'error',
             'message': str(e)
@@ -114,12 +145,18 @@ def get_gmus():
             } for gmu in gmus]
         })
     except Exception as e:
+        logger.error(f"Error in get_gmus: {str(e)}")
         return jsonify({
             'status': 'error',
             'message': str(e)
         }), 500
 
+@app.route('/')
+def index():
+    return jsonify({"message": "DankNet API is running"})
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    socketio.run(app, debug=True)
+    port = int(os.getenv('PORT', 5000))
+    socketio.run(app, host='0.0.0.0', port=port, debug=False)

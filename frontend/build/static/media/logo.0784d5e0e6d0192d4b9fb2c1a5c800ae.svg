@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="250" cy="250" r="240" fill="#1B1B1B"/>
+  
+  <!-- Mountains -->
+  <path d="M100 350 L200 200 L300 350 L100 350" fill="#F5F5DC"/>
+  <path d="M250 350 L350 250 L450 350 L250 350" fill="#F5F5DC"/>
+  
+  <!-- Trees -->
+  <g transform="translate(0, 0)">
+    <path d="M120 350 L135 320 L150 350 Z" fill="#1B1B1B"/>
+    <path d="M160 350 L175 320 L190 350 Z" fill="#1B1B1B"/>
+    <path d="M400 350 L415 320 L430 350 Z" fill="#1B1B1B"/>
+    <path d="M360 350 L375 320 L390 350 Z" fill="#1B1B1B"/>
+  </g>
+  
+  <!-- Elk 1 -->
+  <g transform="translate(150, 280)">
+    <!-- Body -->
+    <path d="M0 0 C20 -20 60 -20 80 0 C100 20 60 40 40 40 C20 40 -20 20 0 0" fill="#8B4513"/>
+    <!-- Head -->
+    <path d="M-10 -10 L-30 -20 L-40 0 L-20 10 L-10 0" fill="#8B4513"/>
+    <!-- Antlers -->
+    <path d="M-30 -25 L-50 -45 L-40 -55 L-30 -45 L-20 -55 L-10 -45 Z" fill="#1B1B1B"/>
+  </g>
+  
+  <!-- Elk 2 -->
+  <g transform="translate(280, 280)">
+    <!-- Body -->
+    <path d="M0 0 C20 -20 60 -20 80 0 C100 20 60 40 40 40 C20 40 -20 20 0 0" fill="#8B4513"/>
+    <!-- Head -->
+    <path d="M-10 -10 L-30 -20 L-40 0 L-20 10 L-10 0" fill="#8B4513"/>
+    <!-- Antlers -->
+    <path d="M-30 -25 L-50 -45 L-40 -55 L-30 -45 L-20 -55 L-10 -45 Z" fill="#1B1B1B"/>
+  </g>
+  
+  <!-- Rifle -->
+  <g transform="translate(150, 400) rotate(-45)">
+    <!-- Stock -->
+    <rect x="0" y="0" width="200" height="20" rx="5" fill="#1B1B1B"/>
+    <!-- Scope -->
+    <rect x="150" y="-10" width="80" height="40" rx="5" fill="#1B1B1B"/>
+  </g>
+  
+  <!-- DB Text -->
+  <text x="250" y="450" text-anchor="middle" font-family="Arial Black" font-size="100" fill="#8B4513" font-weight="bold">
+    <tspan x="250">DB</tspan>
+  </text>
+  
+  <!-- Dank Bulls Text -->
+  <text x="250" y="480" text-anchor="middle" font-family="Arial" font-size="24" fill="#F5F5DC" font-weight="bold">
+    <tspan x="250">DANK BULLS</tspan>
+  </text>
+</svg>

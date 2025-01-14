@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.70c8319f.css",
-    "main.js": "/static/js/main.7563e031.js",
-    "static/js/932.028685d7.chunk.js": "/static/js/932.028685d7.chunk.js",
-    "static/media/dankbulls-logo.svg": "/static/media/dankbulls-logo.4214f2737bbd80edef18be945497b1fe.svg",
-    "index.html": "/index.html"
+    "main.css": "https://yourusername.pythonanywhere.com/static/css/main.2767dbe1.css",
+    "main.js": "https://yourusername.pythonanywhere.com/static/js/main.8c28e9a8.js",
+    "static/media/logo.svg": "https://yourusername.pythonanywhere.com/static/media/logo.0784d5e0e6d0192d4b9fb2c1a5c800ae.svg",
+    "index.html": "https://yourusername.pythonanywhere.com/index.html"
   },
   "entrypoints": [
-    "static/css/main.70c8319f.css",
-    "static/js/main.7563e031.js"
+    "static/css/main.2767dbe1.css",
+    "static/js/main.8c28e9a8.js"
   ]
 }
