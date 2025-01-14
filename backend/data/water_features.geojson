@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "water_features",
+"features": [
+{ "type": "Feature", "properties": { "name": "Lake Granby", "type": "lake", "permanent": true, "seasonal": false }, "geometry": { "type": "Point", "coordinates": [ -105.8672, 40.1869 ] } },
+{ "type": "Feature", "properties": { "name": "Green Mountain Reservoir", "type": "reservoir", "permanent": true, "seasonal": false }, "geometry": { "type": "Point", "coordinates": [ -106.2347, 39.8783 ] } },
+{ "type": "Feature", "properties": { "name": "Williams Fork Reservoir", "type": "reservoir", "permanent": true, "seasonal": false }, "geometry": { "type": "Point", "coordinates": [ -106.02, 39.9675 ] } },
+{ "type": "Feature", "properties": { "name": "Colorado River", "type": "river", "permanent": true, "seasonal": false }, "geometry": { "type": "Point", "coordinates": [ -106.3, 39.9 ] } },
+{ "type": "Feature", "properties": { "name": "Blue River", "type": "river", "permanent": true, "seasonal": false }, "geometry": { "type": "Point", "coordinates": [ -106.1, 39.8 ] } },
+{ "type": "Feature", "properties": { "name": "Williams Fork", "type": "stream", "permanent": false, "seasonal": true }, "geometry": { "type": "Point", "coordinates": [ -106.05, 39.95 ] } },
+{ "type": "Feature", "properties": { "name": "Mountain Pond 1", "type": "pond", "permanent": false, "seasonal": true }, "geometry": { "type": "Point", "coordinates": [ -106.15, 40.05 ] } },
+{ "type": "Feature", "properties": { "name": "Alpine Lake 1", "type": "alpine_lake", "permanent": false, "seasonal": false }, "geometry": { "type": "Point", "coordinates": [ -106.2, 40.1 ] } },
+{ "type": "Feature", "properties": { "name": "Spring 1", "type": "spring", "permanent": false, "seasonal": true }, "geometry": { "type": "Point", "coordinates": [ -106.18, 40.08 ] } }
+]
+}

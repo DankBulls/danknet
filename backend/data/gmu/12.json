@@ -1,0 +1,75 @@
+{
+    "gmu_number": 12,
+    "name": "Bears Ears",
+    "latitude": 40.7850,
+    "longitude": -107.2653,
+    "elevation": 8500,
+    "terrain_ruggedness": 0.75,
+    "vegetation_density": 0.65,
+    "water_sources": 0.8,
+    "terrain_description": {
+        "type": "Mountainous",
+        "features": [
+            "High elevation peaks",
+            "Dense forest cover",
+            "Multiple water sources",
+            "Rocky outcroppings"
+        ],
+        "vegetation_types": [
+            "Aspen groves",
+            "Oak brush",
+            "Coniferous forest",
+            "Alpine meadows"
+        ]
+    },
+    "access_points": [
+        {
+            "name": "North Access Trail",
+            "coordinates": {
+                "lat": 40.7920,
+                "lng": -107.2700
+            },
+            "difficulty": "Moderate",
+            "parking": true
+        },
+        {
+            "name": "East Ridge Road",
+            "coordinates": {
+                "lat": 40.7800,
+                "lng": -107.2500
+            },
+            "difficulty": "Easy",
+            "parking": true
+        }
+    ],
+    "regulations": {
+        "hunting_seasons": {
+            "elk": ["archery", "muzzleloader", "rifle"],
+            "deer": ["archery", "muzzleloader", "rifle"],
+            "bear": ["fall"]
+        },
+        "special_restrictions": [
+            "Limited access during winter months",
+            "No overnight camping in certain areas"
+        ]
+    },
+    "historical_data": {
+        "success_rates": {
+            "2024": {
+                "elk": 0.35,
+                "deer": 0.42,
+                "bear": 0.15
+            },
+            "2023": {
+                "elk": 0.32,
+                "deer": 0.38,
+                "bear": 0.12
+            }
+        },
+        "population_trends": {
+            "elk": "stable",
+            "deer": "increasing",
+            "bear": "stable"
+        }
+    }
+}

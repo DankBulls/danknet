@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#FFF5E1" stroke="#FF4D00" stroke-width="6"/>
+  
+  <!-- Antlers -->
+  <path d="M60,80 C60,60 80,40 100,40 C120,40 140,60 140,80" 
+        fill="none" stroke="#8B4513" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Mountains -->
+  <path d="M40,140 L80,80 L120,140 L160,80 L180,140 L20,140" 
+        fill="#2E5A1C" stroke="none"/>
+  
+  <!-- Compass Rose -->
+  <circle cx="100" cy="100" r="20" fill="#FF4D00"/>
+  <path d="M100,85 L100,115 M85,100 L115,100" 
+        stroke="white" stroke-width="4" stroke-linecap="round"/>
+</svg>

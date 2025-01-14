@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Create .ssh directory if it doesn't exist
+mkdir -p ~/.ssh
+
+# Add the public key to authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCa0U0OgjTjKtoS238Bz40q+gTHYotfOZeu6QmxMFDTOLSjpFla5jy9PA90BxEsP+Gwb1a+tbbsdJksatYdyWYZAqnv/CTcsO6l4xI1MHfvapVHgoHNlGxsWx12XG3Knx04w5EV9bZe/Bu4tqtWv/IQTKMIITZyOQJorbyjpOYYZ7+qXioXSkFtbg58JSdzihpyyyVOz5AOBJaYoL6zE1QdihxCXEiyF/TPZhVMHxUZS8vrg8GIQAu+y3zt1eXM2Ed8fiQPmIMDizAExGFbH2YlxM3bV+GWlj+dNEwQhzKi6RUplArRgiGWrSqZBqVJ6tNHGuzBZk3cs8NEC4jOGtcGA9zZdF2+fe39v6c9yq2UFxkFPLFGgitOLbfwBHzejeW7/1YedRPVzTljL2Lnov6IVV2c0Mb9E1qPP1ccQous2Ot6iL/SUv3uFyiXxTXrqe1S87JlmtwWo/kPqVimTCkwnVbDXgDWI4F0WjNXlAVpbDjmgfrGFfhLuHcB3KHjsfEXSWHWNZY2DEuhJWodvG3r2vhu7DPx7FdJ6aE4pL3c1XM7J3Ts519K31sNmrZub8KArMDD7cM8YoS4pmQo88aqfx4aBtvyJ2fbf1QK8hUCw4mr2huqkxEDihZHLDibCEOyf7ICH/MEumdvkTENzhcDlQ99Bke+HYnlOCfgezzOUw== jerem@JerAcer" >> ~/.ssh/authorized_keys
+
+# Set correct permissions
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys

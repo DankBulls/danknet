@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "MONGODB_URI": "@mongodb_uri",
+    "WEATHER_API_KEY": "@weather_api_key",
+    "OPENAI_API_KEY": "@openai_api_key",
+    "MODEL_STORAGE_PATH": "/tmp/models"
+  }
+}
