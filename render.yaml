@@ -14,13 +14,13 @@ services:
     healthCheckPath: /api/health
     autoDeploy: true
     
-  # Frontend static site
-  - type: web
+  # Frontend static site (using Render's static site hosting)
+  - type: static
     name: danknet-frontend
-    env: node
-    region: oregon
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: npx serve -s frontend/build
-    envVars:
-      - key: NODE_VERSION
-        value: 16.13.0
+    publishPath: frontend/build
+    staticPublishPath: frontend/build # This is for newer Render versions
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
